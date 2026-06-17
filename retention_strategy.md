@@ -1,106 +1,85 @@
 # Retention Strategy
 ## D2C Customer Churn Capstone — Part 2
 
-**Budget:** ₹50,000 (limited campaign budget)  
-**Snapshot Date:** 2025-09-30
+**Budget:** ₹50,000 | **Snapshot:** 2025-09-30 | **Customers:** 2,400 | **Overall churn:** 47.0%
+
+---
+
+## Final Segment Profiles (from actual data)
+
+| Segment | Customers | Avg Recency | Avg Freq | Avg Monetary | Avg Tickets | Avg Sentiment | Avg Sessions | Churn Rate |
+|---|---|---|---|---|---|---|---|---|
+| Dormant | 317 | 172 d | 1.25 | ₹782 | 0.33 | −0.12 | 3.7 | **87.0%** |
+| At-Risk | 451 | 163 d | 3.86 | ₹3,086 | 0.66 | −0.20 | 3.8 | **78.0%** |
+| Discount-Dependent | 214 | 102 d | 2.96 | ₹1,900 | 0.63 | −0.21 | 5.0 | **56.0%** |
+| High-Value Unhappy | 162 | 110 d | 6.21 | ₹4,795 | 2.62 | −0.56 | 5.1 | **56.0%** |
+| Promising | 309 | 51 d | 2.20 | ₹1,774 | 0.57 | −0.20 | 6.1 | **36.0%** |
+| Loyal Customers | 190 | 55 d | 5.11 | ₹3,552 | 0.83 | −0.25 | 6.4 | **26.0%** |
+| New Customers | 413 | 20 d | 1.24 | ₹909 | 0.30 | −0.11 | 6.7 | **23.0%** |
+| Champions | 344 | 21 d | 6.37 | ₹4,916 | 1.46 | −0.36 | 7.3 | **10.0%** |
+
+The segmentation cleanly separates churn risk: Dormant/At-Risk churn at 78–87%, while Champions/New churn at 10–23%. This validates the RFM + behavioural approach.
 
 ---
 
 ## Segment Definitions & Retention Actions
 
-### 1. At-Risk (Priority 1 — 30% budget = ₹15,000)
-**Who they are:** Previously active customers (decent frequency/spend) whose recency has dropped sharply. They haven't ordered in 60–150+ days but used to be regular buyers.
+### 1. Dormant (2% budget = ₹1,000)
+**Profile:** 317 customers, 172-day avg recency, 1.25 orders, ₹782 spend, 87% churn.  
+**Who:** Customers who bought once or twice long ago and have essentially left.  
+**Action:** Minimal investment. Single "We miss you" email + a short exit survey to learn why they left. Do not spend retention budget chasing an 87%-churn group — most are already gone.
 
-**Behaviour:** Declining purchase frequency, moderate-to-high historical spend, some still browsing the site/app without converting.
+### 2. At-Risk (Priority 1 — 30% budget = ₹15,000)
+**Profile:** 451 customers, 163-day recency, 3.86 orders, ₹3,086 spend, 78% churn.  
+**Who:** Previously solid buyers (nearly 4 orders, ₹3K spend) who have gone quiet. The highest-value recoverable group.  
+**Action:** URGENT personalised win-back. Reference their actual purchase history ("your favourite [category] is back in stock"). Time-bound offer.  
+**Why Priority 1:** Big segment (451), high spend, and at 78% churn there is enormous upside to recovering even a fraction.
 
-**Retention action:** Personalised win-back email with an exclusive, time-bound offer (free shipping on next order or 15% off their most-purchased category). Urgency framing: "We saved your favourites — they're selling out."
+### 3. High-Value Unhappy (Priority 2 — 25% budget = ₹12,500)
+**Profile:** 162 customers, 6.21 orders, ₹4,795 spend, 2.62 tickets, −0.56 sentiment (most negative), 56% churn.  
+**Who:** High-spending, frequent customers who are actively dissatisfied — most support tickets and worst sentiment.  
+**Action:** Resolve open tickets FIRST via a dedicated agent. Only then send goodwill credit (₹200–500) + loyalty upgrade. Never send a marketing offer to someone with an unresolved complaint.  
+**Why Priority 2:** Highest spend-at-risk. Negative sentiment (−0.56) shows these are fixable service failures, not natural attrition.
 
-**Why prioritised first:** These customers have proven purchase intent and brand familiarity. The cost to reactivate is far lower than acquiring a new customer of equivalent LTV.
+### 4. Discount-Dependent (Priority 5 — 8% budget = ₹4,000)
+**Profile:** 214 customers, 2.96 orders, ₹1,900 spend, 40% avg discount (highest), 56% churn.  
+**Who:** Buy only on heavy discounts. 40% average discount vs ~27% for other segments.  
+**Action:** Do NOT send another discount. Offer loyalty points / cashback to shift value perception. Gradual discount weaning.  
+**Why:** Recoverable but margin-eroding. Worth keeping only if we can change their buying behaviour.
 
----
+### 5. Promising (Priority 3 — 15% budget = ₹7,500)
+**Profile:** 309 customers, 51-day recency, 2.20 orders, ₹1,774 spend, 36% churn.  
+**Action:** Product recommendations + light bundle offers + educational content. Build the habit.  
+**Why Priority 3:** Below-average churn but large enough that small improvements compound.
 
-### 2. High-Value Unhappy (Priority 2 — 25% budget = ₹12,500)
-**Who they are:** High-spending customers (M_score ≥ 4) who have raised 2+ negative support tickets. They spend a lot but are dissatisfied.
+### 6. Loyal Customers (Priority 6 — 5% budget = ₹2,500)
+**Profile:** 190 customers, 5.11 orders, ₹3,552 spend, 26% churn.  
+**Action:** Reward, don't discount. Early access to launches + referral programme.
 
-**Behaviour:** Strong monetary value, but negative sentiment in support interactions. Some tickets were reopened, indicating unresolved issues.
-
-**Retention action:** Route to a dedicated support agent FIRST. Resolve all open tickets before sending any offer. Once resolved, send a personal apology with a goodwill account credit (₹200–500). Follow up with loyalty tier upgrade if eligible.
-
-**Why second priority:** Losing a high-value customer costs 5–10x more than the credit. Support resolution must happen before any marketing touch.
-
----
-
-### 3. Promising (Priority 3 — 15% budget = ₹7,500)
-**Who they are:** Middle-of-the-road customers — moderate recency, frequency, and spend. They haven't committed to the brand yet but show potential.
-
-**Behaviour:** Moderate engagement across all dimensions. Not churning yet, but not loyal either.
-
-**Retention action:** Product recommendation emails based on their preferred category. Light bundle offers ("Buy 2, get 10% off"). Educational content (skincare routines, product guides) to build brand stickiness.
-
-**Why third:** Large segment with room to grow. Low-cost nudges can shift them toward loyalty.
-
----
-
-### 4. New Customers (Priority 4 — 12% budget = ₹6,000)
-**Who they are:** Very recent first purchase, low frequency (1–2 orders). Still in the onboarding window.
-
-**Behaviour:** High recency but unproven loyalty. Some have surprisingly high first-order values.
-
-**Retention action:** Welcome email series (3 emails over 14 days): order confirmation with tips, "Complete your routine" cross-sell, first-reorder incentive (10% off second order). If second order happens within 30 days, auto-enrol in loyalty programme.
-
-**Why fourth:** Early engagement determines lifetime value. The welcome window is short — missing it means losing them to competitors.
-
----
-
-### 5. Discount-Dependent (Priority 5 — 8% budget = ₹4,000)
-**Who they are:** Customers with very high average discount usage (>35%). They only buy during sales or with heavy coupons.
-
-**Behaviour:** Moderate frequency but driven entirely by price. When discounts stop, they stop buying.
-
-**Retention action:** Do NOT send another discount. Instead, offer loyalty points (2x points on next full-price order), cashback, or free shipping. Goal: break the discount dependency by shifting perceived value.
-
-**Why fifth:** Discounting these customers further erodes margin. The strategy is to change behaviour, not reinforce it.
-
----
-
-### 6. Dormant (Priority 6 — 2% budget = ₹1,000)
-**Who they are:** Low recency, low frequency, low spend. Haven't engaged in 150+ days.
-
-**Behaviour:** Minimal or zero recent activity. Many have already mentally left the brand.
-
-**Retention action:** Minimal investment. Send a single "We miss you" email with a short survey ("What made you stop shopping with us?"). Use responses for product/service improvement rather than expecting reactivation.
-
-**Why low priority:** ROI on reactivating deeply dormant customers is typically very low. Budget is better spent on At-Risk and High-Value Unhappy.
-
----
-
-### 7. Loyal Customers (Priority 7 — 5% budget = ₹2,500)
-**Who they are:** Frequent, consistent buyers who are already engaged. Low churn risk.
-
-**Retention action:** Reward programme: early access to new launches, referral bonus (₹100 credit per referral), and a "Thank you" touchpoint. No discount needed.
-
----
+### 7. New Customers (Priority 4 — 12% budget = ₹6,000)
+**Profile:** 413 customers, 20-day recency, 1.24 orders, ₹909 spend, 23% churn.  
+**Action:** Onboarding series + first-reorder incentive. Auto-enrol in loyalty if second order lands within 30 days.  
+**Why mid-priority:** Large group (413), low churn now but unproven — onboarding window determines lifetime value.
 
 ### 8. Champions (Priority 8 — 3% budget = ₹1,500)
-**Who they are:** Best customers — recent, frequent, high spend. Lowest churn risk.
-
-**Retention action:** VIP treatment: exclusive previews, ambassador programme invitation, personalised thank-you note. Zero discounts — they don't need them.
+**Profile:** 344 customers, 6.37 orders, ₹4,916 spend (highest), 10% churn (lowest).  
+**Action:** VIP perks, ambassador programme. Zero discounts — they don't need them.
 
 ---
 
-## Budget Prioritisation Rationale
+## Budget Prioritisation
 
 | Priority | Segment | Budget | Rationale |
 |---|---|---|---|
-| 1 | At-Risk | ₹15,000 (30%) | Highest reactivation ROI — proven buyers going quiet |
-| 2 | High-Value Unhappy | ₹12,500 (25%) | Protect high-LTV customers with support resolution |
-| 3 | Promising | ₹7,500 (15%) | Large segment, low-cost nudges to build loyalty |
-| 4 | New Customers | ₹6,000 (12%) | Critical onboarding window |
+| 1 | At-Risk | ₹15,000 (30%) | Largest high-value recoverable group, 78% churn |
+| 2 | High-Value Unhappy | ₹12,500 (25%) | Highest spend-at-risk; fixable via support |
+| 3 | Promising | ₹7,500 (15%) | Large nurture opportunity |
+| 4 | New Customers | ₹6,000 (12%) | Onboarding window critical |
 | 5 | Discount-Dependent | ₹4,000 (8%) | Behaviour change, not more discounts |
-| 6 | Dormant | ₹1,000 (2%) | Low ROI; survey for insights only |
-| 7 | Loyal Customers | ₹2,500 (5%) | Already retained; reward, don't over-invest |
-| 8 | Champions | ₹1,500 (3%) | Already retained; celebrate, don't spend |
+| 6 | Loyal Customers | ₹2,500 (5%) | Reward, low risk |
+| 7 | Champions | ₹1,500 (3%) | Already retained at 90% |
+| 8 | Dormant | ₹1,000 (2%) | 87% churn — survey only |
 
 **Total: ₹50,000**
 
-The strategy deliberately front-loads budget on **recoverable customers** (At-Risk, High-Value Unhappy) rather than spreading it evenly. Loyal and Champion segments receive recognition, not cash incentives — their behaviour doesn't need correction.
+Budget is deliberately concentrated on **At-Risk + High-Value Unhappy** (55% of budget), which together hold 613 high-spend customers with fixable, recoverable churn. We spend almost nothing on Dormant (87% churn — unrecoverable) and Champions (10% churn — already safe).
